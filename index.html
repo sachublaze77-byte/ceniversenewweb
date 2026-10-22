@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090a10">
+    <title>CINEVERSE | Your Movie Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <a class="logo" href="#home">CINE<span>VERSE</span><i>.</i></a>
+
+    <nav id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#experience">Experience</a>
+    </nav>
+
+    <a href="#movies" class="nav-cta">Book Tickets <span>↗</span></a>
+    <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation"
+        aria-expanded="false">☰</button>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="eyebrow"><span class="live-dot"></span> YOUR NEXT MOVIE NIGHT STARTS HERE</div>
+            <h1>Every story<br>deserves a <span>big screen.</span></h1>
+            <p class="hero-description">
+                Discover extraordinary films, choose your perfect seat,
+                and make every movie night unforgettable.
+            </p>
+            <div class="hero-actions">
+                <a href="#movies" class="btn btn-gold">Explore Movies <span>→</span></a>
+                <a href="#experience" class="btn btn-outline">The Experience</a>
+            </div>
+            <div class="hero-meta">
+                <div><strong>01</strong><span>DISCOVER FILMS</span></div>
+                <div><strong>02</strong><span>CHOOSE YOUR SEAT</span></div>
+                <div><strong>03</strong><span>ENJOY THE SHOW</span></div>
+            </div>
+        </div>
+        <div class="hero-side-label">THE ART OF CINEMA — EST. 2026</div>
+    </section>
+
+    <section class="movies-section section" id="movies">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">THE SILVER SCREEN</p>
+                <h2>Now <span>showing.</span></h2>
+            </div>
+            <p class="heading-note">Find your next favourite story.</p>
+        </div>
+
+        <div class="movie-toolbar">
+            <label class="search-box">
+                <span>⌕</span>
+                <input id="searchInput" type="search"
+                    placeholder="Search movies..." aria-label="Search movies">
+            </label>
+            <div class="filters" id="filters">
+                <button class="filter active" data-genre="All">All Films</button>
+                <button class="filter" data-genre="Action">Action</button>
+                <button class="filter" data-genre="Sci-Fi">Sci-Fi</button>
+                <button class="filter" data-genre="Drama">Drama</button>
+            </div>
+        </div>
+
+        <div class="movie-grid" id="movieGrid">
+            <article class="movie-card"
+                data-title="Beyond the Stars" data-genre="Sci-Fi"
+                data-rating="8.8" data-duration="2h 18m"
+                data-description="A breathtaking journey beyond the edge of the known universe.">
+                <div class="poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=650&q=85"
+                        alt="Space landscape poster" class="poster">
+                    <span class="movie-badge">TRENDING</span>
+                    <button class="quick-book" data-book>Book Now ↗</button>
+                </div>
+                <div class="movie-info">
+                    <div class="movie-title-row">
+                        <h3>Beyond the Stars</h3><span class="rating">★ 8.8</span>
+                    </div>
+                    <p class="movie-meta">Sci-Fi <span>•</span> 2h 18m</p>
+                    <div class="showtimes">
+                        <button data-time="10:30 AM">10:30 AM</button>
+                        <button data-time="2:15 PM">2:15 PM</button>
+                        <button data-time="7:00 PM">7:00 PM</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="movie-card"
+                data-title="Midnight Pursuit" data-genre="Action"
+                data-rating="8.5" data-duration="2h 05m"
+                data-description="One city. One night. One mission that changes everything.">
+                <div class="poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=650&q=85"
+                        alt="Moody night city poster" class="poster">
+                    <span class="movie-badge">POPULAR</span>
+                    <button class="quick-book" data-book>Book Now ↗</button>
+                </div>
+                <div class="movie-info">
+                    <div class="movie-title-row">
+                        <h3>Midnight Pursuit</h3><span class="rating">★ 8.5</span>
+                    </div>
+                    <p class="movie-meta">Action <span>•</span> 2h 05m</p>
+                    <div class="showtimes">
+                        <button data-time="11:00 AM">11:00 AM</button>
+                        <button data-time="4:30 PM">4:30 PM</button>
+                        <button data-time="8:15 PM">8:15 PM</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="movie-card"
+                data-title="The Last Horizon" data-genre="Drama"
+                data-rating="9.1" data-duration="2h 12m"
+                data-description="An emotional story of courage, hope and second chances.">
+                <div class="poster-wrap">
+                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=650&q=85"
+                        alt="Mountain horizon poster" class="poster">
+                    <span class="movie-badge">TOP RATED</span>
+                    <button class="quick-book" data-book>Book Now ↗</button>
+                </div>
+                <div class="movie-info">
+                    <div class="movie-title-row">
+                        <h3>The Last Horizon</h3><span class="rating">★ 9.1</span>
+                    </div>
+                    <p class="movie-meta">Drama <span>•</span> 2h 12m</p>
+                    <div class="showtimes">
+                        <button data-time="9:45 AM">9:45 AM</button>
+                        <button data-time="1:30 PM">1:30 PM</button>
+                        <button data-time="6:45 PM">6:45 PM</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <p class="empty-state" id="emptyState" hidden>No movies found. Try another search.</p>
+    </section>
+
+    <section class="experience section" id="experience">
+        <div class="experience-image">
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85"
+                alt="Cinema auditorium">
+            <span class="image-caption">MORE THAN A MOVIE.</span>
+        </div>
+        <div class="experience-content">
+            <p class="eyebrow">MADE FOR MOVIE LOVERS</p>
+            <h2>Escape reality.<br><span>Enter the story.</span></h2>
+            <p>
+                From the opening scene to the final credits, your
+                movie experience should feel extraordinary.
+                Pick your film, find your seat, and let the story begin.
+            </p>
+            <div class="feature-list">
+                <div><span>✦</span><div><strong>Your seat, your choice</strong><small>Select seats before your show.</small></div></div>
+                <div><span>✦</span><div><strong>Simple booking</strong><small>A smooth, straightforward booking demo.</small></div></div>
+                <div><span>✦</span><div><strong>Made for every screen</strong><small>Book from desktop or mobile.</small></div></div>
+            </div>
+            <a href="#movies" class="btn btn-gold">Find Your Movie ↗</a>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <p class="eyebrow">YOUR SEAT IS WAITING</p>
+        <h2>Lights down. <span>World on.</span></h2>
+        <a href="#movies" class="btn btn-gold">Book Your Experience ↗</a>
+    </section>
+</main>
+
+<footer>
+    <a class="logo" href="#home">CINE<span>VERSE</span><i>.</i></a>
+    <p>Made for the love of cinema.</p>
+    <small>© 2026 CINEVERSE · DEMO BOOKING EXPERIENCE</small>
+</footer>
+
+<!-- Booking modal -->
+<div class="modal" id="bookingModal" role="dialog"
+    aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="booking-panel">
+        <button class="close-btn" id="closeModal" aria-label="Close booking">×</button>
+
+        <p class="eyebrow">YOUR MOVIE NIGHT</p>
+        <h2 id="modalTitle">Choose your <span>seats.</span></h2>
+        <p id="modalMovieInfo" class="modal-subtitle"></p>
+
+        <div class="show-select">
+            <label for="showSelect">Showtime</label>
+            <select id="showSelect"></select>
+        </div>
+
+        <div class="screen">SCREEN THIS WAY</div>
+
+        <div class="seat-legend">
+            <span><i class="legend-seat"></i> Available</span>
+            <span><i class="legend-seat selected-legend"></i> Selected</span>
+            <span><i class="legend-seat occupied-legend"></i> Occupied</span>
+        </div>
+
+        <div class="seat-map" id="seatMap" aria-label="Cinema seat selection"></div>
+
+        <div class="booking-summary">
+            <div>
+                <small>SELECTED SEATS</small>
+                <strong id="selectedSeats">None</strong>
+            </div>
+            <div class="total-price">
+                <small>TOTAL AMOUNT</small>
+                <strong id="totalPrice">₹0</strong>
+            </div>
+        </div>
+
+        <button class="btn btn-gold confirm-btn" id="confirmBooking">
+            Confirm Booking ↗
+        </button>
+        <p class="demo-note">Demo only · No payment will be taken.</p>
+    </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
