@@ -1,232 +1,490 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#090a10">
-    <title>CINEVERSE | Your Movie Experience</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="NUTSHELL'S SPIDEY 4K — premium Spider-Man wallpapers.">
+  <title>NUTSHELL'S SPIDEY 4K | Premium Wallpapers</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="navbar">
-    <a class="logo" href="#home">CINE<span>VERSE</span><i>.</i></a>
+  <div class="web-lines" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-    <nav id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#movies">Movies</a>
-        <a href="#experience">Experience</a>
+  <header class="navbar">
+    <a href="#" class="brand">
+      <span class="spider-mark">✳</span>
+      <span>NUTSHELL<span class="red">.SPIDEY</span></span>
+    </a>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#gallery">WALLPAPERS</a>
+      <a href="#about">ABOUT</a>
     </nav>
+    <a class="nav-button" href="#gallery">EXPLORE 4K ↗</a>
+  </header>
 
-    <a href="#movies" class="nav-cta">Book Tickets <span>↗</span></a>
-    <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation"
-        aria-expanded="false">☰</button>
-</header>
-
-<main>
+  <main>
     <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="eyebrow"><span class="live-dot"></span> YOUR NEXT MOVIE NIGHT STARTS HERE</div>
-            <h1>Every story<br>deserves a <span>big screen.</span></h1>
-            <p class="hero-description">
-                Discover extraordinary films, choose your perfect seat,
-                and make every movie night unforgettable.
-            </p>
-            <div class="hero-actions">
-                <a href="#movies" class="btn btn-gold">Explore Movies <span>→</span></a>
-                <a href="#experience" class="btn btn-outline">The Experience</a>
-            </div>
-            <div class="hero-meta">
-                <div><strong>01</strong><span>DISCOVER FILMS</span></div>
-                <div><strong>02</strong><span>CHOOSE YOUR SEAT</span></div>
-                <div><strong>03</strong><span>ENJOY THE SHOW</span></div>
-            </div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="live-dot"></span> THE ULTIMATE WALLPAPER VAULT</div>
+        <h1>YOUR SCREEN.<br>YOUR <span class="outline">UNIVERSE.</span></h1>
+        <p class="hero-description">
+          Enter the spider-verse. Discover dark, cinematic and
+          ultra-HD wallpapers made for your setup.
+        </p>
+        <div class="hero-actions">
+          <a href="#gallery" class="primary-btn">EXPLORE WALLPAPERS <span>↗</span></a>
+          <span class="quality"><span class="quality-icon">✦</span> UP TO 4K QUALITY</span>
         </div>
-        <div class="hero-side-label">THE ART OF CINEMA — EST. 2026</div>
+        <div class="hero-stats">
+          <div><strong id="wallpaperCount">06</strong><span>WALLPAPERS</span></div>
+          <div><strong>4K</strong><span>ULTRA HD</span></div>
+          <div><strong>FREE</strong><span>DOWNLOADS</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-ring ring-one"></div>
+        <div class="hero-ring ring-two"></div>
+        <div class="hero-cross">+</div>
+        <div class="hero-image-frame">
+          <img src="images/spiderman11.jpg"
+               alt="Your featured Spider-Man wallpaper"
+               onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+          <div class="hero-fallback">
+            <span class="fallback-symbol">✳</span>
+            <span>YOUR SPIDEY<br>ART GOES HERE</span>
+            <small>images/hero.jpg</small>
+          </div>
+          <div class="image-label"><span>01 / FEATURED</span><span>4K UHD</span></div>
+        </div>
+        <span class="floating-code">SP//004</span>
+        <span class="floating-plus">✳</span>
+      </div>
+
+      <div class="scroll-indicator"><span></span> SCROLL TO EXPLORE</div>
     </section>
 
-    <section class="movies-section section" id="movies">
-        <div class="section-heading">
-            <div>
-                <p class="eyebrow">THE SILVER SCREEN</p>
-                <h2>Now <span>showing.</span></h2>
-            </div>
-            <p class="heading-note">Find your next favourite story.</p>
-        </div>
-
-        <div class="movie-toolbar">
-            <label class="search-box">
-                <span>⌕</span>
-                <input id="searchInput" type="search"
-                    placeholder="Search movies..." aria-label="Search movies">
-            </label>
-            <div class="filters" id="filters">
-                <button class="filter active" data-genre="All">All Films</button>
-                <button class="filter" data-genre="Action">Action</button>
-                <button class="filter" data-genre="Sci-Fi">Sci-Fi</button>
-                <button class="filter" data-genre="Drama">Drama</button>
-            </div>
-        </div>
-
-        <div class="movie-grid" id="movieGrid">
-            <article class="movie-card"
-                data-title="Beyond the Stars" data-genre="Sci-Fi"
-                data-rating="8.8" data-duration="2h 18m"
-                data-description="A breathtaking journey beyond the edge of the known universe.">
-                <div class="poster-wrap">
-                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=650&q=85"
-                        alt="Space landscape poster" class="poster">
-                    <span class="movie-badge">TRENDING</span>
-                    <button class="quick-book" data-book>Book Now ↗</button>
-                </div>
-                <div class="movie-info">
-                    <div class="movie-title-row">
-                        <h3>Beyond the Stars</h3><span class="rating">★ 8.8</span>
-                    </div>
-                    <p class="movie-meta">Sci-Fi <span>•</span> 2h 18m</p>
-                    <div class="showtimes">
-                        <button data-time="10:30 AM">10:30 AM</button>
-                        <button data-time="2:15 PM">2:15 PM</button>
-                        <button data-time="7:00 PM">7:00 PM</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="movie-card"
-                data-title="Midnight Pursuit" data-genre="Action"
-                data-rating="8.5" data-duration="2h 05m"
-                data-description="One city. One night. One mission that changes everything.">
-                <div class="poster-wrap">
-                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=650&q=85"
-                        alt="Moody night city poster" class="poster">
-                    <span class="movie-badge">POPULAR</span>
-                    <button class="quick-book" data-book>Book Now ↗</button>
-                </div>
-                <div class="movie-info">
-                    <div class="movie-title-row">
-                        <h3>Midnight Pursuit</h3><span class="rating">★ 8.5</span>
-                    </div>
-                    <p class="movie-meta">Action <span>•</span> 2h 05m</p>
-                    <div class="showtimes">
-                        <button data-time="11:00 AM">11:00 AM</button>
-                        <button data-time="4:30 PM">4:30 PM</button>
-                        <button data-time="8:15 PM">8:15 PM</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="movie-card"
-                data-title="The Last Horizon" data-genre="Drama"
-                data-rating="9.1" data-duration="2h 12m"
-                data-description="An emotional story of courage, hope and second chances.">
-                <div class="poster-wrap">
-                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=650&q=85"
-                        alt="Mountain horizon poster" class="poster">
-                    <span class="movie-badge">TOP RATED</span>
-                    <button class="quick-book" data-book>Book Now ↗</button>
-                </div>
-                <div class="movie-info">
-                    <div class="movie-title-row">
-                        <h3>The Last Horizon</h3><span class="rating">★ 9.1</span>
-                    </div>
-                    <p class="movie-meta">Drama <span>•</span> 2h 12m</p>
-                    <div class="showtimes">
-                        <button data-time="9:45 AM">9:45 AM</button>
-                        <button data-time="1:30 PM">1:30 PM</button>
-                        <button data-time="6:45 PM">6:45 PM</button>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <p class="empty-state" id="emptyState" hidden>No movies found. Try another search.</p>
+    <section class="ticker" aria-label="Website features">
+      <div class="ticker-track">
+        <span>✳ SPIDER-VERSE</span><span>✦ 4K WALLPAPERS</span>
+        <span>✳ BLAZE™</span><span>✦ FREE DOWNLOADS</span>
+        <span>✳ SPIDER-VERSE</span><span>✦ 4K WALLPAPERS</span>
+        <span>✳ BLAZE™</span><span>✦ FREE DOWNLOADS</span>
+      </div>
     </section>
 
-    <section class="experience section" id="experience">
-        <div class="experience-image">
-            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85"
-                alt="Cinema auditorium">
-            <span class="image-caption">MORE THAN A MOVIE.</span>
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">YOUR NEXT SCREEN LOOK</div>
+          <h2>THE <span class="red">VAULT.</span></h2>
+          <p>Pick your wallpaper. Make your screen legendary.</p>
         </div>
-        <div class="experience-content">
-            <p class="eyebrow">MADE FOR MOVIE LOVERS</p>
-            <h2>Escape reality.<br><span>Enter the story.</span></h2>
-            <p>
-                From the opening scene to the final credits, your
-                movie experience should feel extraordinary.
-                Pick your film, find your seat, and let the story begin.
-            </p>
-            <div class="feature-list">
-                <div><span>✦</span><div><strong>Your seat, your choice</strong><small>Select seats before your show.</small></div></div>
-                <div><span>✦</span><div><strong>Simple booking</strong><small>A smooth, straightforward booking demo.</small></div></div>
-                <div><span>✦</span><div><strong>Made for every screen</strong><small>Book from desktop or mobile.</small></div></div>
-            </div>
-            <a href="#movies" class="btn btn-gold">Find Your Movie ↗</a>
+        <span class="collection-label">COLLECTION_001</span>
+      </div>
+
+      <div class="gallery-tools">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search wallpapers..." aria-label="Search wallpapers">
+        </label>
+        <div class="filter-list" id="filters">
+          <button class="filter active" data-filter="all">ALL</button>
+          <button class="filter" data-filter="dark">DARK</button>
+          <button class="filter" data-filter="red">RED</button>
+          <button class="filter" data-filter="city">CITY</button>
         </div>
+      </div>
+
+      <div class="wallpaper-grid" id="wallpaperGrid">
+
+        <!-- WALLPAPER CARD TEMPLATE: duplicate a card to add another image -->
+        <article class="wallpaper-card reveal" data-category="dark" data-title="Midnight Web">
+          <div class="wallpaper-image">
+            <img src="images/spiderman1.jpg" alt="Midnight Web wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>MIDNIGHT WEB</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Midnight Web">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Midnight Web</h3><p>BLACK / CINEMATIC</p></div>
+            <button class="download-btn" data-file="images/spiderman1.jpg" data-name="midnight-web.jpg" aria-label="Download Midnight Web">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="red" data-title="Crimson Swing">
+          <div class="wallpaper-image">
+            <img src="images/spiderman12.jpg" alt="Crimson Swing wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>CRIMSON SWING</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Crimson Swing">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Crimson Swing</h3><p>RED / ACTION</p></div>
+            <button class="download-btn" data-file="images/spiderman12.jpg" data-name="crimson-swing.jpg" aria-label="Download Crimson Swing">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="New York After Dark">
+          <div class="wallpaper-image">
+            <img src="images/spiderman13.jpg" alt="New York After Dark wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>NEW YORK AFTER DARK</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview New York After Dark">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>New York After Dark</h3><p>CITY / NIGHT</p></div>
+            <button class="download-btn" data-file="images/spiderman13.jpg" data-name="new-york-after-dark.jpg" aria-label="Download New York After Dark">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="dark" data-title="Shadow Protocol">
+          <div class="wallpaper-image">
+            <img src="images/spiderman14.jpg" alt="Shadow Protocol wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>SHADOW PROTOCOL</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Shadow Protocol">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Shadow Protocol</h3><p>BLACK / STEALTH</p></div>
+            <button class="download-btn" data-file="images/spiderman14.jpg" data-name="shadow-protocol.jpg" aria-label="Download Shadow Protocol">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="red" data-title="Scarlet Velocity">
+          <div class="wallpaper-image">
+            <img src="images/spiderman15.jpg" alt="Scarlet Velocity wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>SCARLET VELOCITY</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Scarlet Velocity">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Scarlet Velocity</h3><p>RED / NEON</p></div>
+            <button class="download-btn" data-file="images/spiderman15.jpg" data-name="scarlet-velocity.jpg" aria-label="Download Scarlet Velocity">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman16.jpg" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman16.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman17.jpg" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman17.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman18.jpg" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman18.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman19.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman19.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Miles">
+          <div class="wallpaper-image">
+            <img src="images/spiderman20.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>lOVE / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman20.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman21.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman21.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="The black theam">
+          <div class="wallpaper-image">
+            <img src="images/spiderman22.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>BLACK / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman22.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+<article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman23.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman23.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="The white.jpg">
+          <div class="wallpaper-image">
+            <img src="images/spiderman24.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>WHITE / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman24.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+<article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman25.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman25.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman26.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman26.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+<article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman27.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman27.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+<article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman28.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman28.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman29.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman29.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman30.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman30.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman31.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman31.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+<article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman32.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman32.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman33.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman33.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+        <article class="wallpaper-card reveal" data-category="city" data-title="Above The Skyline">
+          <div class="wallpaper-image">
+            <img src="images/spiderman34.JPG" alt="Above The Skyline wallpaper"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('image-missing')">
+            <div class="art-fallback"><span>✳</span><small>ABOVE THE SKYLINE</small></div>
+            <span class="resolution">4K UHD</span>
+            <button class="preview-btn" aria-label="Preview Above The Skyline">↗</button>
+          </div>
+          <div class="card-info">
+            <div><h3>Above The Skyline</h3><p>CITY / VIBES</p></div>
+            <button class="download-btn" data-file="images/spiderman34.jpg" data-name="above-the-skyline.jpg" aria-label="Download Above The Skyline">↓</button>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty-state" id="emptyState" hidden>No matching wallpapers found. Try another search.</div>
+      <div class="gallery-footer"><span>END OF COLLECTION_001</span><span>MORE WALLPAPERS COMING SOON ✳</span></div>
     </section>
 
-    <section class="final-cta">
-        <p class="eyebrow">YOUR SEAT IS WAITING</p>
-        <h2>Lights down. <span>World on.</span></h2>
-        <a href="#movies" class="btn btn-gold">Book Your Experience ↗</a>
+    <section class="about-section" id="about">
+      <div class="about-symbol">✳</div>
+      <div><div class="eyebrow">BUILT FOR THE FANS</div>
+        <h2>BE YOUR OWN HERO.<br><span class="red">EVEN WHEN THE WORLD IS FALLING APART.</span></h2>
+        <p>More than just pixels — it’s a whole Spider-Man vibe. Crafted by Blaze™ × Nutshell™ | 2026. The web is only getting started.  Stay locked in for upcoming wallpapers that bring the heat, the heroes, and the multiverse straight to your screen. Next drop? It’s gonna be legendary.</p>
+      
+      
+      </div>
+      <a href="#home" class="back-top">BACK TO TOP ↑</a>
     </section>
-</main>
+  </main>
 
-<footer>
-    <a class="logo" href="#home">CINE<span>VERSE</span><i>.</i></a>
-    <p>Made for the love of cinema.</p>
-    <small>© 2026 CINEVERSE · DEMO BOOKING EXPERIENCE</small>
-</footer>
 
-<!-- Booking modal -->
-<div class="modal" id="bookingModal" role="dialog"
-    aria-modal="true" aria-labelledby="modalTitle" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="booking-panel">
-        <button class="close-btn" id="closeModal" aria-label="Close booking">×</button>
+  <footer class="footer">
+    <a href="#home" class="footer-brand">NUTSHELL'S <span>SPIDEY 4K</span></a>
+    <span>MADE FOR YOUR SCREEN. BUILT WITH PASSION.</span>
+    <span>© <span id="year"></span> NUTSHELL™</span>
+  </footer>
 
-        <p class="eyebrow">YOUR MOVIE NIGHT</p>
-        <h2 id="modalTitle">Choose your <span>seats.</span></h2>
-        <p id="modalMovieInfo" class="modal-subtitle"></p>
+  <!-- MOVING RED BOTTOM BRAND TAG -->
+  <div class="brand-marquee" aria-label="Nutshell and Blaze trademarks">
+    <div class="brand-marquee-track">
+      <span>✳ NUTSHELL™</span><span>✦ BLAZE™</span><span>✳ NUTSHELL™</span><span>✦ BLAZE™</span>
+      <span>✳ NUTSHELL™</span><span>✦ BLAZE™</span><span>✳ NUTSHELL™</span><span>✦ BLAZE™</span>
+    <span>✳ NEW DROPS COMIN' SOON!</span></div>
+  </div>
 
-        <div class="show-select">
-            <label for="showSelect">Showtime</label>
-            <select id="showSelect"></select>
-        </div>
+  <!-- FULLSCREEN WALLPAPER PREVIEW -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">✕</button>
+    <img id="lightboxImage" src="" alt="Wallpaper preview">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <button class="lightbox-download" id="lightboxDownload">↓ DOWNLOAD WALLPAPER</button>
+  </div>
 
-        <div class="screen">SCREEN THIS WAY</div>
+  <div class="toast" id="toast" role="status"></div>
 
-        <div class="seat-legend">
-            <span><i class="legend-seat"></i> Available</span>
-            <span><i class="legend-seat selected-legend"></i> Selected</span>
-            <span><i class="legend-seat occupied-legend"></i> Occupied</span>
-        </div>
-
-        <div class="seat-map" id="seatMap" aria-label="Cinema seat selection"></div>
-
-        <div class="booking-summary">
-            <div>
-                <small>SELECTED SEATS</small>
-                <strong id="selectedSeats">None</strong>
-            </div>
-            <div class="total-price">
-                <small>TOTAL AMOUNT</small>
-                <strong id="totalPrice">₹0</strong>
-            </div>
-        </div>
-
-        <button class="btn btn-gold confirm-btn" id="confirmBooking">
-            Confirm Booking ↗
-        </button>
-        <p class="demo-note">Demo only · No payment will be taken.</p>
-    </div>
-</div>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
